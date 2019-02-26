@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>To-do List Applications</title>
+
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+
+		<p>Logged As <b>Januar Wicaksono</b> <a class="waves-effect waves-light btn">Logout</a></p>
+
+		<ul class="collapsible">
+			<li>
+				<div class="collapsible-header">
+					<i class="material-icons">person_add</i>
+					Invitations
+					<span class="new badge red">4</span>
+				</div>
+				<div class="collapsible-body">
+					<p><span class="red-text"><b>Januar Wicaksono </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
+					<p><span class="red-text"><b>Intan Wicaksono </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
+					<p><span class="red-text"><b>Vanessa Putria </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
+				</div>
+			</li>
+		</ul>
+
+		<h1 class="center-align green-text text-darken-4">
+			To-do list
+		</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Task</th>
+					<th>Assigned To</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td><a href="">Slim down to 10 kg</a></td>
+					<td>Januar Wicaksono</td>
+					<td><a title="edit" href=""><i class="small material-icons">edit</i></a></td>
+					<td><a title="delete" href=""><i class="small material-icons">delete_forever</i></a></td>
+				</tr>
+				<tr>
+					<td><a href="">Slim down to 10 kg</a></td>
+					<td>John Meydi</td>
+					<td><a title="edit" href=""><i class="small material-icons">edit</i></a></td>
+					<td><a title="delete" href=""><i class="small material-icons">delete_forever</i></a></td>
+				</tr>
+				<tr>
+					<td><a href="">Slim down to 10 kg</a></td>
+					<td>Micelle Rodri</td>
+					<td><a title="edit" href=""><i class="small material-icons">edit</i></a></td>
+					<td><a title="delete" href=""><i class="small material-icons">delete_forever</i></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<ul class="pagination">
+			<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+			<li class="active"><a href="#!">1</a></li>
+			<li class="waves-effect"><a href="#!">2</a></li>
+			<li class="waves-effect"><a href="#!">3</a></li>
+			<li class="waves-effect"><a href="#!">4</a></li>
+			<li class="waves-effect"><a href="#!">5</a></li>
+			<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+		</ul>
+
+		<form class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="task" type="text" class="validate">
+					<label for="task">New task</label>
+				</div>
+			</div>
+			<div class="input-field col s12">
+				<select>
+					<option value="" disabled selected>Choose your option</option>
+					<option value="1">Januar Wicaksono</option>
+					<option value="2">John Meydi</option>
+					<option value="3">Micelle Rodri</option>
+				</select>
+				<label>Asigned task</label>
+			</div>
+			<a href="" class="waves-effect waves-light btn">Add New Task</a>
+		</form><br><br><br>
+
+		<ul class="collection with-header">
+			<li class="collection-item"><h4>My Coworkers</h4></li>
+			<li class="collection-item">Putria Vanessa Meydi <a href="#!" class="secondary-content">delete</a></li>
+			<li class="collection-item">Intan Rizky Amalia  <a href="#!" class="secondary-content">delete</a></li>
+			<li class="collection-item">Septian Diwibowo <a href="#!" class="secondary-content">delete</a></li>
+			<li class="collection-item">Meydi Vanessa <a href="#!" class="secondary-content">delete</a></li>
+		</ul>
+
+		<form class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="task2" value="task content to edit" type="text" class="validate">
+					<label for="task2">Edit task</label>
+				</div>
+			</div>
+			<a href="" class="waves-effect waves-light btn">Edit Task</a>
+		</form>
+
+	</div>
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="../../bin/materialize.js"></script>
+	<script src="js/init.js"></script>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.collapsible').collapsible();
+
+			$('select').formSelect();
+		});
+	</script>
+
+</body>
+</html>
