@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <table>
     <thead>
         <tr>
@@ -15,14 +14,24 @@
     </thead>
 
     <tbody>
+
+        @foreach ($tasks as $task)
         <tr>
-            <td><a href="">Slim down to 10 kg</a></td>
+            <td>
+            @if (!$task->status)
+                {{ $task->content }}
+            @else
+                <strike class="grey-text">{{ $task->content }}</strike>
+            @endif
+            </td>
             @isAdmin
-            <td>Januar Wicaksono</td>
+            <td>{{ $task->name }}</td>
             @endisAdmin
-            <td><a title="edit" href=""><i class="small material-icons">edit</i></a></td>
-            <td><a title="delete" href=""><i class="small material-icons">delete_forever</i></a></td>
+            <td><a title="edit" href="{{ route('edit', $task->id) }}"><i class="small material-icons">edit</i></a></td>
+            <td><a title="delete" onclick="return confirm('Delete?')" href="{{ route('delete', $task->id) }}"><i class="small material-icons">delete_forever</i></a></td>
         </tr>
+        @endforeach
+
     </tbody>
 </table>
 
@@ -34,20 +43,21 @@
     <li class="waves-effect"><a href="#!">4</a></li>
     <li class="waves-effect"><a href="#!">5</a></li>
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-</ul>
+</ul><br><br>
 
-<form class="col s12">
+<form method="POST" action="{{ route('store') }}" class="col s12">
+    @csrf
     <div class="row">
         <div class="input-field col s12">
-            <input id="task" type="text" class="validate">
+            <input id="task" name="task" type="text" class="validate">
             <label for="task">New task</label>
         </div>
     </div>
     
     @include('partials.coworkers')
 
-    <a href="" class="waves-effect waves-light btn">Add New Task</a>
-</form><br><br><br>
+    <button type="submit" class="waves-effect waves-light btn">Add New Task</button>
+</form><br><br>
 
 @isWorker
 <form action="" class="col s12">
@@ -62,7 +72,7 @@
     </div>
 
     <a href="" class="waves-effect waves-light btn">Send invitation</a>
-</form>
+</form><br><br>
 @endisWorker
 
 <ul class="collection with-header">
