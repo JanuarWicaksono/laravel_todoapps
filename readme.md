@@ -4,7 +4,7 @@
 
 This is my source code training about build Todo Application Web Base Using Laravel
 
-<img src="laravel_todoapps_sc.png" width="50%">
+<img src="laravel_todoapps_sc.png" width="50%" align="center">
 
 <p align="center">
 	<h2>Tools Used</h2>
