@@ -21,10 +21,12 @@
 
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <p>Logged As <b>{{ Auth::user()->name }}</b> <button class="waves-effect waves-light btn">Logout</button> </p>
+            <p>Logged As <b>{{ Auth::user()->name }}</b> <button class="waves-effect waves-light btn">Logout</button>
+            </p>
         </form>
 
         @isAdmin
+        @if ($invitations->count() > 0)
         <ul class="collapsible">
             <li>
                 <div class="collapsible-header">
@@ -33,12 +35,18 @@
                     <span class="new badge red">4</span>
                 </div>
                 <div class="collapsible-body">
-                    <p><span class="red-text"><b>Januar Wicaksono </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
-                    <p><span class="red-text"><b>Intan Wicaksono </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
-                    <p><span class="red-text"><b>Vanessa Putria </b></span><a href="">Accept</a> | <a href="">Deny</a></p>
+                    @foreach ($invitations as $invitation)
+                    <p>
+                        <span class="red-text"><b> {{ $invitation->worker->name }} </b></span>
+                        <a href="{{ route('acceptInvitation', ['id' => $invitation->id]) }}">Accept</a>
+                        | 
+                        <a href="{{ route('denyInvitation', ['id' => $invitation->id]) }}">Deny</a>
+                    </p>
+                    @endforeach
                 </div>
             </li>
         </ul>
+        @endif
         @endisAdmin
 
         <h1 class="center-align green-text text-darken-4">
@@ -52,7 +60,7 @@
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
