@@ -2,7 +2,7 @@
 	<h2>Todo Application Web Base Using Laravel</h2>
 </p>
 
-This is my source code training about build Todo Application Web Base Using Laravel
+This is my source code training about build Todo Application Web Base Using Laravel and MaterializeCSS
 
 <img src="laravel_todoapps_sc.png" width="50%" align="center">
 
@@ -26,10 +26,8 @@ This is my source code training about build Todo Application Web Base Using Lara
 <ul>
 	<li>Eloquent</li>
 	<li>Migration</li>
-	<li>Soft Deleting</li>
 	<li>Pagination</li>
-	<li>Cache</li>
-	<li>User Authentication</li>
+	<li>Multiple User Authentication</li>
 </ul>
 
 <p align="center">
